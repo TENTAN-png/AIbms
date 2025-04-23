@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fire Detection - SoC Prediction</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Fire Detection System</h1>
+    <form method="POST" action="/predict">
+      <label>Voltage:</label>
+      <input type="number" step="any" name="Voltage" required>
+
+      <label>Current:</label>
+      <input type="number" step="any" name="Current" required>
+
+      <label>Temperature:</label>
+      <input type="number" step="any" name="Temperature" required>
+
+      <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction_text %}
+    <div class="result">{{ prediction_text }}</div>
+    {% endif %}
+  </div>
+</body>
+</html>
